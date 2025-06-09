@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Pokedex</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84c047;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="color:#ecf39e;">Inicio</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="nav navbar-nav">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 1</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila01.php" style="color: black">Tabla 1</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila02.php" style="color: black">Tabla 2</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila03.php" style="color: black">Ingresar datos</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila04.php" style="color: black">Datos relacionados</a><br>
+			</div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 2</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila05.php" style="color: black">Registrar alumno</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila05a.php" style="color: black">Registrar alumno 2</a><br>
+                <a class="dropdown-item" href="/keilaleon/zeret01.php" style="color: black">Productos</a><br>
+                <a class="dropdown-item" href="/keilaleon/pag.php" style="color: black">Proyecto primavera</a><br>
+			</div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 3</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila06.html" style="color: black">Pokedex</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila07.html" style="color: black">Peliculas API</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila08.html" style="color: black">DragonBall API</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila09.html" style="color: black">Final</a><br>
+			</div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+    <style>
+        body{
+            background-image: url(pokedex.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            background-image: url(check.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: #fb6f92;
+            border-color: transparent;
+            border-radius: 50px;
+            position: absolute;
+            top: 400px;
+            left: 300px;
+        }
+        button:hover{
+            background-color: #ffc4d6;
+        }
+        .pokeImg{
+            position: absolute;
+            z-index: 1;
+            width: 250px;
+            height: 250px;
+            left: 70px;
+            top: 15%;
+        }
+        .placeholder{
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            border-radius: 10px;
+            background-color: rgba(238, 224, 224, 0.63);
+            text-align: center;
+            text-shadow: 2px;
+            font-size: 25px;
+            top: 400px;
+            left: 60px;
+        }
+        .pokeimg1{
+            position: absolute;
+            color: #ff0a54;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+        }
+    </style>
+    <!--Jigglypluff-->
+    <!--alt+96=`-->
+
+    <input type="text" placeholder="Pokemon" id="pokeName" class="placeholder">
+    <img src="pokeball.png" alt="Pokeball" id="pokeImg" width="300px" class="pokeImg">
+
+    <!--07-05, el div y desde .pokeimg en style-->
+    <div id="pokename" class="pokeimg1" style="top: 70px; left: 460px;">Nombre del Pokemon:</div>
+    <div id="pokeHe" class="pokeimg1" style="top: 120px; left: 460px;">Altura del Pokemon:</div>
+    <div id="pokeWe" class="pokeimg1" style="top: 170px; left: 460px;">Peso del Pokemon:</div>
+    <div id="poketype" class="pokeimg1" style="top: 220px; left: 460px;">Tipo del Pokemon:</div>
+    <div id="pokeitem" class="pokeimg1" style="top: 270px; left: 460px;">Item del Pokemon:</div>
+    <div id="pokemove1" class="pokeimg1" style="top: 320px; left: 460px;">Movimiento del Pokemon:</div>
+    <div id="pokemove2" class="pokeimg1" style="top: 370px; left: 460px;">Movimiento del Pokemon:</div>
+    <div id="pokemove3" class="pokeimg1" style="top: 420px; left: 460px;">Movimiento del Pokemon:</div>
+    <div id="pokemove4" class="pokeimg1" style="top: 470px; left: 460px;">Movimiento del Pokemon:</div>
+    <div id="pokeid" class="pokeimg1" style="top: 520px; left: 460px;">Id:</div>
+    <div id="pokeorder" class="pokeimg1" style="top: 570px; left: 460px;">Order:</div>
+    
+    <button onclick="fetchPokemon()" class="button"></button>
+    <div class="grafica">
+        <canvas id="miCanvas"></canvas>
+    </div>
+    <script>
+        const fetchPokemon = () =>{
+            const pokeNameInput = document.getElementById ("pokeName");
+            let pokeName = pokeNameInput.value;
+            pokeName = pokeName.toLowerCase();
+            const url= `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
+            fetch(url).then((res) => {
+                if(res.status != "200"){
+                    console.log (res);
+                }else{
+                    return res.json();
+                }
+            }).then((data) => {
+                if(data){
+                    console.log(data);
+
+                    let pokeImg = data.sprites.front_default;
+                    pokeImage (pokeImg);
+                    let name= document.getElementById('pokename');
+                    name.innerHTML=`Nombre del Pokemon: ${data.forms[0].name}`;
+                    let element1= document.getElementById('pokeHe');
+                    element1.innerHTML=`Altura del Pokemon: ${data.height}`;
+                    let element2= document.getElementById('pokeWe');
+                    element2.innerHTML=`Peso del Pokemon: ${data.weight}`;
+                    let element3= document.getElementById('pokeorder');
+                    element3.innerHTML=`Order: #${data.order}`;
+                    let element4= document.getElementById('pokeid');
+                    element4.innerHTML=`Id: #${data.id}`;
+                    let element5= document.getElementById('pokeitem');
+                    element5.innerHTML=`Ability: ${data.abilities[0].ability.name}`;
+                    let element6= document.getElementById('poketype');
+                    element6.innerHTML=`Type: ${data.types[0].type.name}`;
+                    let element7= document.getElementById('pokemove1');
+                    element7.innerHTML=`Move 1: ${data.moves[0].move.name}`;
+                    let element8= document.getElementById('pokemove2');
+                    element8.innerHTML=`Move 2: ${data.moves[1].move.name}`;
+                    let element9= document.getElementById('pokemove3');
+                    element9.innerHTML=`Move 3: ${data.moves[2].move.name}`;
+                    let element10= document.getElementById('pokemove4');
+                    element10.innerHTML=`Move 4: ${data.moves[3].move.name}`;
+                    
+                    const miCanvas=document.getElementById("miCanvas").getContext("2d");
+                    if(window.miCanva != undefined)
+                    window.miCanva.destroy();
+                    window.miCanva=new Chart(miCanvas,{
+                        type: "bar",
+                        data: {
+                            labels: ["HP","Attack","Defense","Special-A","Special-D","Speed"],
+                            datasets: [
+                                {
+                                    label: `${data.form[0].name}`,
+                                    backgroundColor: 'rgba(154,2,35,1)',
+
+                                    data: [`$data.stats[0].base_stat}`,
+                                    `$data.stats[1].base_stat}`,
+                                    `$data.stats[2].base_stat}`,
+                                    `$data.stats[3].base_stat}`,
+                                    `$data.stats[4].base_stat}`,
+                                    `$data.stats[5].base_stat}`],
+                                    borderColor: [
+                                        'rgba(255,99,132,1)',
+                                        'rgba(54,162,235,1)',
+                                        'rgba(355,206,86,1)',
+                                        'rgba(75,192,192,1)',
+                                        'rgba(153,102,255,1)',
+                                        'rgba(255,159,64,1)'
+                                    ],
+                                    backgroundColor: [
+                                        'rgba(255,99,132,0.5)',
+                                        'rgba(54,162,235,0.5)',
+                                        'rgba(355,206,86,0.5)',
+                                        'rgba(75,192,192,0.5)',
+                                        'rgba(153,102,255,0.5)',
+                                        'rgba(255,159,64,0.5)'
+                                    ], bordeWidth: 1,
+                                }]},
+                        options: {
+                            scales: {
+                                x: {
+                                    ticks:{
+                                        maxRotation: 90,
+                                        minRotation: 90,
+                                        color:'purple',
+                                        font: {size: 15},
+                                    } }}}
+                    })} });
+                    const pokeImage = (url) => {
+                        const pokePhoto = document.getElementById("pokeImg");
+                        pokePhoto.src = url;
+                    }}
+    </script>
+</body>
+</html>

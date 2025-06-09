@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Peliculas API</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84c047;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="color:#ecf39e;">Inicio</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="nav navbar-nav">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 1</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila01.php" style="color: black">Tabla 1</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila02.php" style="color: black">Tabla 2</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila03.php" style="color: black">Ingresar datos</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila04.php" style="color: black">Datos relacionados</a><br>
+			</div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 2</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila05.php" style="color: black">Registrar alumno</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila05a.php" style="color: black">Registrar alumno 2</a><br>
+                <a class="dropdown-item" href="/keilaleon/zeret01.php" style="color: black">Productos</a><br>
+                <a class="dropdown-item" href="/keilaleon/pag.php" style="color: black">Proyecto primavera</a><br>
+			</div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 3</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila06.html" style="color: black">Pokedex</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila07.html" style="color: black">Peliculas API</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila08.html" style="color: black">DragonBall API</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila09.html" style="color: black">Pagina 9</a><br>
+			</div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+    :root{
+        --color-primario: #463F3A;
+        --color-secundario: #F4F3EE;
+        --color-terciario: #BCB8B1; 
+        --color-cuarto: #E0AFA0;
+        --color-quinto: #8A817C;
+    }
+    body{
+        background-color: var(--color-cuarto);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+    header{
+        padding: 16px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--color-secundario);
+    }
+    .search{
+        background-color: var(--color-secundario);
+        border: 5px solid var(--color-primario);
+        border-radius: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        padding: 8px 15px;
+        color: black;
+    }
+    .search::placeholder{
+        color: var(--color-primario);
+    }
+    .search:focus{
+        outline: none;
+        background-color: white;
+    }
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .personaje{
+        width: 400px;
+        margin: 15px;
+        background-color: var(--color-secundario);
+        box-shadow: 10px 15px 1px var(--color-primario);
+        position: relative;
+        overflow:hidden;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .personaje img{
+        width: 80%;
+        height: 400px;
+        object-fit: contain;
+    }
+    .personaje-info{
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 0.8px 15px 15px;
+        letter-spacing: 5px;
+    }
+    .personaje-info h3{
+        color: var(--color-primario);
+        margin-top: 0;
+    }
+    .personaje-info h1{
+        color: var(--color-primario);
+        margin-top: 0;
+    }
+    .overview {
+        background-color: white;
+        padding: 15px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-height: 100%;
+        transform: translateY(101%);
+        overflow-y: auto;
+        transition: transform 1s ease-in;
+    }
+    .personaje:hover .overview{
+        transform: translateY(0);
+    }
+    </style>
+
+    <header>
+        <form id="form">
+        <img src="klogo.png" alt="logo" style="width: 40px; height: 40px;">
+        <input type="text" id="search" class="search" placeholder="Busca tu personaje"></form>
+    </header>
+    <main id="main"></main>
+
+    <script>
+        const API_URL_HP = 'https://hp-api.onrender.com/api/characters';
+        const API_URL_RM = 'https://rickandmortyapi.com/api/character';
+        
+        const main = document.getElementById('main');
+        const form = document.getElementById('form');
+        const search = document.getElementById('search');
+
+        //Carga inicial de todas las APIs
+        getAllCharacters();
+        //Se llama a la función que obtiene todos los personajes de ambas APIs cuando la página carga por primera vez
+        async function getAllCharacters(){
+            const [resRM, resHP] = await Promise.all([
+                fetch(API_URL_RM).then(res => res.json()),
+                fetch(API_URL_HP).then(res => res.json())
+            ]);
+
+            //La función es async, porque va a usar await
+            //Se muestra un mensaje mientras cargan los personajes
+            //Se hacen ambas peticiones en paralelo con Promise.all
+            //Se convierten las respuestas en formato JSON
+            //await hace que JavaScript espere el resultado de Promise.all(..)antes de continuar con el resto del códig, 
+            // Es decir, detiene la ejecución hasta que ambas respuestas esten listas
+
+            const rm = resRM.results || [];
+            const hp = resHP || [];
+
+            //se guardan los arrays de los personajes 
+            //Rick and Morty usa results, Harry Potter devuelve un array directamente
+
+            showCharacters([...rm, ...hp]);
+        }
+
+        //se llama a showCharacters para mostrar todos los personajes juntos
+
+        function showCharacters(characters){
+            main.innerHTML= '';
+                
+            characters.forEach((char) => {
+                let name = char.name || 'Desconocido';
+                let image = char.image || '';
+                let status = char.status || (char.alive === false ? 'Deceased' : 'Alive');
+                let species = char.species || 'Desconocido'; //let race = char.race || char.especies;
+                let gender = char.gender || '';
+
+                const charElement = document.createElement('div');
+                charElement.classList.add('personaje');
+
+                //aqui se pone let debido a que arriba se usa let, se ponen los elementos que se usan de manera individual, arriba solo estan los que se ponen en ambos 
+                //se pone el signo de pregunta y despues el punto ya que viene de ese "subtema"
+        if (char.status) {
+            let id = char.id;
+            let origin = char.origin;
+            let location = char.location;
+            
+            charElement.innerHTML=`
+            <img src = "${image}" alt="${image}">
+            <div class="personaje-info">
+                <h1>${id}</h1>
+                <h3>${name}</h3>
+                <br>
+                ${origin?.name || 'Desconocido'}
+            </div>
+            <div class = "overview">
+                <h3>Descripción</h3>
+                <p><strong>Species: </strong> ${species}</p>
+                <p><strong>Gender: </strong> ${gender}</p>
+                <p><strong>Location: </strong> ${location?.name || 'Desconocido'}</p>
+                </div>`;
+            } else{
+                //aqui si va con const como el cod anterior, si no no funciona
+                const{house,patronus, yearOfBirth, ancestry, core} = char;
+                charElement.innerHTML=`
+                <img src = "${image}" alt="${image}">
+                <div class="personaje-info">
+                    <h3>${name}</h3>
+                    <br>
+                    ${house || 'Sin casa'}
+                </div>
+                <div class = "overview">
+                    <h3>Descripción</h3>
+                    <p><strong>Species: </strong> ${species}</p>
+                    <p><strong>Patronus: </strong> ${patronus || 'No tiene'}</p>
+                    <p><strong>Gender: </strong> ${gender}</p>
+                    <p><strong>Year of birth: </strong> ${yearOfBirth}</p>
+                    <p><strong>Ancestry: </strong> ${ancestry || 'Desconocido'}</p>
+                    </div>`;}
+
+                    main.appendChild(charElement);
+                        }) }
+                        
+    </script>
+    
+</body>
+</html>

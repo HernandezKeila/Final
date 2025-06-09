@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>DragonBall API</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84c047;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="color:#ecf39e;">Inicio</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="nav navbar-nav">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 1</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila01.php" style="color: black">Tabla 1</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila02.php" style="color: black">Tabla 2</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila03.php" style="color: black">Ingresar datos</a><br>
+			<a class="dropdown-item" href="/keilaleon/keila04.php" style="color: black">Datos relacionados</a><br>
+			</div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 2</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila05.php" style="color: black">Registrar alumno</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila05a.php" style="color: black">Registrar alumno 2</a><br>
+                <a class="dropdown-item" href="/keilaleon/zeret01.php" style="color: black">Productos</a><br>
+                <a class="dropdown-item" href="/keilaleon/pag.php" style="color: black">Proyecto primavera</a><br>
+			</div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e">Parcial 3</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/keilaleon/keila06.html" style="color: black">Pokedex</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila07.html" style="color: black">Peliculas API</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila08.html" style="color: black">DragonBall API</a><br>
+                <a class="dropdown-item" href="/keilaleon/keila09.html" style="color: black">Final</a><br>
+			</div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+    :root{
+        --color-primario: #90a955;
+        --color-secundario: #ffd9da;
+        --color-terciario: #f3e1dd; 
+        --color-cuarto: #a7c06c ;
+        --color-quinto: #d3b9b3de;
+    }
+    body{
+        background-color: var(--color-cuarto);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+    header{
+        padding: 16px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--color-secundario);
+    }
+    .search{
+        background-color: var(--color-secundario);
+        border: 5px solid var(--color-primario);
+        border-radius: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        padding: 8px 15px;
+        color: black;
+    }
+    .search::placeholder{
+        color: var(--color-primario);
+    }
+    .search:focus{
+        outline: none;
+        background-color: white;
+    }
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .personaje{
+        width: 400px;
+        margin: 15px;
+        background-color: var(--color-secundario);
+        box-shadow: 10px 15px 1px var(--color-primario);
+        position: relative;
+        overflow:hidden;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .personaje img{
+        width: 80%;
+        height: 400px;
+        object-fit: contain;
+    }
+    .personaje-info{
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 0.8px 15px 15px;
+        letter-spacing: 5px;
+    }
+    .personaje-info h3{
+        color: var(--color-primario);
+        margin-top: 0;
+    }
+    .personaje-info h1{
+        color: var(--color-primario);
+        margin-top: 0;
+    }
+    .overview {
+        background-color: white;
+        padding: 15px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-height: 100%;
+        transform: translateY(101%);
+        overflow-y: auto;
+        transition: transform 1s ease-in;
+    }
+    .personaje:hover .overview{
+        transform: translateY(0);
+    }
+    </style>
+
+    <header>
+        <form id="form">
+            <img src="esf.png" alt="logo" style="width: 100px; height: 100px;">
+        <input type="text" id="search" class="search" placeholder="Busca tu pelicula"></form>
+    </header>
+    <main id="main"></main>
+
+    <script>
+        const API_URL = 'https://dragonball-api.com/api/characters';
+        
+        const main = document.getElementById('main');
+        const form = document.getElementById('form');
+        const search = document.getElementById('search');
+
+        getCharacters (API_URL)
+
+        async function getCharacters(url){
+            const res = await fetch(url);
+            const data = await res.json();
+            showCharacters(data.items || data);
+        }
+        function showCharacters(characters){
+            main.innerHTML = '';
+            characters.forEach((char) =>{
+                const{id,name, image, ki, maxKi, race, gender, description} = char;
+                const charElement = document.createElement('div');
+                charElement.classList.add('personaje');
+                charElement.innerHTML=`
+                <img src = "${image}" alt="${image}">
+                <div class="personaje-info">
+                    <h1>${id}</h1>
+                    <h3>${name}</h3>
+                    <br>
+                    ${race}
+                        </div>
+                        <div class = "overview">
+                            <h3>Descripcion</h3>
+                            <p><strong>Ki: </strong> ${ki}</p>
+                            <p><strong>Max Ki: </strong> ${maxKi}</p>
+                            ${description}
+                            </div>` 
+                    main.appendChild(charElement);
+            }) }
+                form.addEventListener('submit', (e) =>{
+                    e.preventDefault()
+                    const searchTerm = search.value.toLowerCase();
+                    if(searchTerm && searchTerm !== ''){
+                        getCharacters(API_URL + `?name=${searchTerm}`)
+                        search.value='';
+                    }else{window.location.reload();}
+                })
+    </script>
+</body>
+</html>
