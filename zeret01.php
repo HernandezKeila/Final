@@ -52,10 +52,10 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e;">Parcial 1</a>
                             <!--Lo que sigue son los menos que se va a desplegar hacia abajo, cada uno tendra el nombre de su práctica, ejemplo, práctica 1 se llamara su nombre+el numero de la practica xx terminando con HTML-->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/keilaleon/keila01.php" style="color: #000;">Tabla 1</a><br>
-                                <a class="dropdown-item" href="/keilaleon/keila02.php" style="color: #000;">Tabla 2</a><br>
-                                <a class="dropdown-item" href="/keilaleon/keila03.php" style="color: #000;">Ingresar datos</a><br>
-                                <a class="dropdown-item" href="/keilaleon/keila04.php" style="color: #000;">Datos relacionados</a><br>
+                                <a class="dropdown-item" href="keila01.php" style="color: #000;">Tabla 1</a><br>
+                                <a class="dropdown-item" href="keila02.php" style="color: #000;">Tabla 2</a><br>
+                                <a class="dropdown-item" href="keila03.php" style="color: #000;">Ingresar datos</a><br>
+                                <a class="dropdown-item" href="keila04.php" style="color: #000;">Datos relacionados</a><br>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -63,10 +63,10 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e;">Parcial 2</a>
                             <!--Lo que sigue son los menos que se va a desplegar hacia abajo, cada uno tendra el nombre de su práctica, ejemplo, práctica 1 se llamara su nombre+el numero de la practica xx terminando con HTML-->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/keilaleon/keila05.php" style="color: #000;">Registrar alumno</a><br>
-                                <a class="dropdown-item" href="/keilaleon/keila05a.php" style="color: #000;">Registrar alumno 2</a><br>
-                                <a class="dropdown-item" href="/keilaleon/zeret01.php" style="color: #000;">Productos</a><br>
-                                <a class="dropdown-item" href="/keilaleon/pag.php" style="color: #000;">Proyecto primavera</a><br>
+                                <a class="dropdown-item" href="keila05.php" style="color: #000;">Registrar alumno</a><br>
+                                <a class="dropdown-item" href="keila05a.php" style="color: #000;">Registrar alumno 2</a><br>
+                                <a class="dropdown-item" href="zeret01.php" style="color: #000;">Productos</a><br>
+                                <a class="dropdown-item" href="pag.php" style="color: #000;">Proyecto primavera</a><br>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -74,10 +74,10 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ecf39e;">Parcial 3</a>
                             <!--Lo que sigue son los menos que se va a desplegar hacia abajo, cada uno tendra el nombre de su práctica, ejemplo, práctica 1 se llamara su nombre+el numero de la practica xx terminando con HTML-->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/keilaleon/keila06.html" style="color: #000;">Pokedex</a><br>
-                                <a class="dropdown-item" href="/keilaleon/keila07.html" style="color: #000;">Peliculas API</a><br>
-                                <a class="dropdown-item" href="/keilaleon/keila08.html" style="color: #000;">DragonBall API</a><br>
-                                <a class="dropdown-item" href="/keilaleon/keila09.html" style="color: #000;">Final</a><br>
+                                <a class="dropdown-item" href="keila06.html" style="color: #000;">Pokedex</a><br>
+                                <a class="dropdown-item" href="keila07.html" style="color: #000;">Peliculas API</a><br>
+                                <a class="dropdown-item" href="keila08.html" style="color: #000;">DragonBall API</a><br>
+                                <a class="dropdown-item" href="keila09.html" style="color: #000;">Final</a><br>
                             </div>
                         </li>
                 </ul>
