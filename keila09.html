@@ -194,54 +194,34 @@
                 let name = char.name || 'Desconocido';
                 let image = char.image || '';
                 let status = char.status || (char.alive === false ? 'Deceased' : 'Alive');
-                let species = char.species || 'Desconocido'; //let race = char.race || char.especies;
-                let gender = char.gender || '';
+                let species = char.species || '';
+                let gender = char.gender || '' ;
+                let location = char.location || '';
+                let house = char.house || '';
+                let patronus = char.patronus || '';
 
                 const charElement = document.createElement('div');
                 charElement.classList.add('personaje');
 
-                //aqui se pone let debido a que arriba se usa let, se ponen los elementos que se usan de manera individual, arriba solo estan los que se ponen en ambos 
-                //se pone el signo de pregunta y despues el punto ya que viene de ese "subtema"
-        if (char.status) {
-            let id = char.id;
-            let origin = char.origin;
-            let location = char.location;
-            
             charElement.innerHTML=`
             <img src = "${image}" alt="${image}">
+
             <div class="personaje-info">
-                <h1>${id}</h1>
                 <h3>${name}</h3>
-                <br>
-                ${origin?.name || 'Desconocido'}
+                <br> ${gender}
             </div>
+
             <div class = "overview">
                 <h3>Descripción</h3>
-                <p><strong>Species: </strong> ${species}</p>
-                <p><strong>Gender: </strong> ${gender}</p>
-                <p><strong>Location: </strong> ${location?.name || 'Desconocido'}</p>
-                </div>`;
-            } else{
-                //aqui si va con const como el cod anterior, si no no funciona
-                const{house,patronus, yearOfBirth, ancestry, core} = char;
-                charElement.innerHTML=`
-                <img src = "${image}" alt="${image}">
-                <div class="personaje-info">
-                    <h3>${name}</h3>
-                    <br>
-                    ${house || 'Sin casa'}
-                </div>
-                <div class = "overview">
-                    <h3>Descripción</h3>
                     <p><strong>Species: </strong> ${species}</p>
+                    <p><strong>Location: </strong> ${location?.name || 'Desconocido'}</p>
                     <p><strong>Patronus: </strong> ${patronus || 'No tiene'}</p>
-                    <p><strong>Gender: </strong> ${gender}</p>
-                    <p><strong>Year of birth: </strong> ${yearOfBirth}</p>
-                    <p><strong>Ancestry: </strong> ${ancestry || 'Desconocido'}</p>
-                    </div>`;}
-
-                    main.appendChild(charElement);
-                        }) }
+                    <p><strong>House: </strong> ${house || 'Desconocido'}</p>
+                </div>`;
+                main.appendChild(charElement);
+            });
+                
+                        }
                         
     </script>
     
